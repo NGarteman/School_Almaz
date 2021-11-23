@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add student</title>
+</head>
+<body>
+
+
+
+<h2>Add student</h2>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create student</button>
+</form>
+
+</br><hr>
+<h1>List of students:</h1>
+{% for student in students %}
+<div class="container"
+    style="border: 2px dashed black; margin-top: 1rem; width: 500px; box-shadow: 0 0 8px #5c5c5c;">
+    <p>Name: {{ student.name }}</p>
+    <p>School: {{ student.school }}</p>
+</div>
+{% endfor %}
+
+
+</body>
+</html>
